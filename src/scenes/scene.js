@@ -8,41 +8,6 @@ export class Scene {
   
   onEnter() {
     // Chamado quando a cena inicia
-  }
-  
-  onExit() {
-    // Chamado ao trocar de cena
-  }
-  
-  update(dt) {
-    // Atualizar entidades
-  }
-  
-  render(ctx) {
-    // Desenhar entidades
-  }
-  
-  remove(entity) {
-  this.entities = this.entities.filter(e => e !== entity);
-}
-  
-  add(entity) {
-    this.entities.push(entity);
-  }
-}
-
-
-/**
- * Classe base para cenas.
- */
- /*
-export class Scene {
-  constructor() {
-    this.entities = [];
-  }
-  
-  onEnter() {
-    // Chamado quando a cena inicia
     // Pode ser sobrescrito por subclasses
   }
   
@@ -87,4 +52,3 @@ export class Scene {
     return this.entities.find(predicate);
   }
 }
-*/

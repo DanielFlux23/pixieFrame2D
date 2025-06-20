@@ -1,7 +1,6 @@
 import {GameLoop} from '/src/core/GameLoop.js';
 
 
-
  /**
  * Classe principal da engine. Responsável por gerenciar canvas, loop de jogo, renderização e a cena atual.
  */
@@ -16,11 +15,12 @@ export class PixieApp {
   constructor({ width = 800, height = 600, canvasId = null } = {}) {
     /** @type {HTMLCanvasElement} */
     this.canvas = canvasId ? document.getElementById(canvasId) : document.createElement('canvas');
+    if (!canvasId) document.body.appendChild(this.canvas);
+
     /** @type {CanvasRenderingContext2D} */
     this.ctx = this.canvas.getContext('2d');
     this.canvas.width = width;
     this.canvas.height = height;
-    if (!canvasId) document.body.appendChild(this.canvas);
     
    /** @type {Scene|null} */
     this.scene = null;
@@ -97,14 +97,3 @@ changeScene(newScene) {
     // Substitua este método para adicionar lógica global de jogo.
   }
 }
-
-
-/*
-const app = new PixieApp();
-
-import { GameScene } from './scenes/GameScene.js'; // GameScene estende Scene
-
-const mainScene = new GameScene();
-app.changeScene(mainScene);
-app.start();
-*/
