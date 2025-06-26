@@ -1,6 +1,6 @@
 # PixieFrame2d
 
-![logo](/assents/imagens/logo5_18_102632.png)
+![logo](/assets/imagens/logo5_18_102632.png)
 
 **PixieFrame** é uma micro-engine 2D em JavaScript que entrega o básico com estilo. Nada de inchaço, só o essencial: renderização, game loop, input e sprites. Feita pra quem quer controle total sem carregar um monstro de engine.
 
