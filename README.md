@@ -30,22 +30,37 @@ Ou use via CDN:
 ## Exemplo rápido
 
 ```js
-import { PixieApp, Sprite, Keyboard } from 'pixieframe';
+import { PixieApp,
+Sprite, 
+Scene, 
+Kliko, 
+  Hud
+} from '/src/index.js';
 
-const app = new PixieApp({ width: 800, height: 600 });
-
-const player = new Sprite('player.png');
-player.x = 100;
-player.y = 100;
-
-app.add(player);
-
-app.onUpdate = (dt) => {
-  if (Keyboard.isDown('ArrowRight')) player.x += 100 * dt;
-  if (Keyboard.isDown('ArrowLeft')) player.x -= 100 * dt;
-};
-
+const app = new PixieApp({ width: 340, height: 400, canvasId: 'canvas' });
 app.start();
+
+const cena = new Scene();
+
+const player = new Sprite('/assets/imagens/dinossauro.png');
+player.x = 150;
+player.y = 350;
+player.width = 32;
+player.height = 32;
+
+cena.add(player);
+app.add(cena)
+
+const input = new Kliko();
+
+input.AddAction('pular', 'pular')
+  .on('pointerdown')
+  .off('pointerup')
+  .globalOff('pointercancel')
+  
+app.onUpdate = (dt) => {
+  if (input.isPressed('pular')) player.y -= 250 * dt;
+};
 ```
 
 ## Estrutura da Engine

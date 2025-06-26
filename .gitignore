@@ -138,7 +138,6 @@ dist
 # tmp
 /.temporario
 /src/base
-/assets
 /src/utilis/ferramentas.js
 /src/utilis/physics
 /main 1.js
