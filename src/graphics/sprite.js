@@ -1,4 +1,4 @@
-import {AssetLoader} from '/assets/assetLoard.js';
+import {AssetLoader} from '/src/carregar_Imagens.js/assetLoard.js';
  /**
  * Representa uma imagem no canvas.
  */
